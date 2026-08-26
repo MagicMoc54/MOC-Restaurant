@@ -1,0 +1,18 @@
+
+ALTER TABLE `moc_employees`
+    ADD COLUMN IF NOT EXISTS `grade` INT NOT NULL DEFAULT 0 AFTER `role`,
+    ADD COLUMN IF NOT EXISTS `last_clock_in` TIMESTAMP NULL DEFAULT NULL,
+    ADD COLUMN IF NOT EXISTS `last_payroll` TIMESTAMP NULL DEFAULT NULL;
+
+ALTER TABLE `moc_job_ranks`
+    ADD COLUMN IF NOT EXISTS `protected` TINYINT(1) NOT NULL DEFAULT 0 AFTER `isboss`;
+
+CREATE TABLE IF NOT EXISTS `moc_business_audit` (
+    `id` INT NOT NULL AUTO_INCREMENT,
+    `restaurant_id` INT NOT NULL,
+    `actor_citizenid` VARCHAR(50) NULL,
+    `action` VARCHAR(50) NOT NULL,
+    `details` LONGTEXT NULL,
+    `created` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOC Restaurant POS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="diagnostic" style="display:none;position:fixed;top:20px;left:20px;background:#b91c1c;color:white;padding:12px;z-index:99999;">MOC POS HTML LOADED</div>
+    <div id="app" class="hidden">
+        <div class="shell">
+            <header>
+                <div>
+                    <div class="eyebrow">MOC RESTAURANT</div>
+                    <h1 id="restaurant">Restaurant POS</h1>
+                    <p>Select items, review the cart, then choose a payment method.</p>
+                </div>
+                <button id="close" class="close" type="button">×</button>
+            </header>
+
+            <main>
+                <section class="menu-section">
+                    <div class="section-title">Menu</div>
+                    <div id="menu" class="menu-grid"></div>
+                </section>
+
+                <aside class="cart-panel">
+                    <div class="section-title">Current Order</div>
+                    <div id="cart" class="cart-lines"></div>
+
+                    <div class="total-line">
+                        <span>Total</span>
+                        <strong>$<span id="total">0</span></strong>
+                    </div>
+
+                    <div class="payments">
+                        <button type="button" data-pay="cash">Pay Cash</button>
+                        <button type="button" data-pay="bank">Pay Bank</button>
+                    </div>
+                </aside>
+            </main>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

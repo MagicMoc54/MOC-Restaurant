@@ -1,0 +1,10 @@
+-- MOC Restaurant v3.2.4 -> v3.3.0
+-- Custom Restaurant Blips
+
+ALTER TABLE `moc_restaurants`
+    ADD COLUMN IF NOT EXISTS `blip_sprite` INT NOT NULL DEFAULT 52,
+    ADD COLUMN IF NOT EXISTS `blip_color` INT NOT NULL DEFAULT 2,
+    ADD COLUMN IF NOT EXISTS `blip_scale` DECIMAL(4,2) NOT NULL DEFAULT 0.75,
+    ADD COLUMN IF NOT EXISTS `blip_x` DECIMAL(10,4) NULL,
+    ADD COLUMN IF NOT EXISTS `blip_y` DECIMAL(10,4) NULL,
+    ADD COLUMN IF NOT EXISTS `blip_z` DECIMAL(10,4) NULL;

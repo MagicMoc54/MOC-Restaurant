@@ -1,0 +1,2 @@
+ALTER TABLE `moc_orders`
+    ADD COLUMN IF NOT EXISTS `priority` INT NOT NULL DEFAULT 0;

@@ -1,0 +1,3 @@
+ALTER TABLE `moc_restaurants`
+    ADD COLUMN IF NOT EXISTS `settings` LONGTEXT NULL,
+    ADD COLUMN IF NOT EXISTS `theme` LONGTEXT NULL;
